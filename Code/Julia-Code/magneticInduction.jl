@@ -41,17 +41,18 @@ magneticFieldErrorLinear = fill(0.1, length(magneticFieldLinear))
 
 weights = 1 ./ magneticFieldErrorLinear
 fitResult = LsqFit.curve_fit(LinFit, currentLinear, magneticFieldLinear, weights, p0)
-#cov_matrix = LsqFit.covariance_matrix(fitResult)
-#param_errors = sqrt.(diag(cov_matrix))
-standardError = estimate_errors(fitResult, 0.1)
 
+covarMatrix = LsqFit.estimate_covar(fitResult)
+paramErrors = sqrt.(diag(covarMatrix))
 
 println("Fit Result : ", fitResult.param)
-println("Fit Errors: ", standardError)
+println("Fit Errors: ", paramErrors)
 
-scatter(current, magneticField, xerr = currentError, yerr = magneticFieldError, xlabel="current I [A]", ylabel="magnetic field B [T]", title="", grid=false, legend=false, color=:blue, markerszie=5)
+scatter(current, magneticField, xerr = currentError, yerr = magneticFieldError, xlabel="current I [A]", ylabel="magnetic field B [T]", title="", grid=false, label="datapoints", color=:red, markerszie=5)
 
 x_values = range(0, maximum(current), 150)
 y_values = LinFit(x_values, fitResult.param)
 
-plot!(x_values, y_values, color=:red)
+plot!(x_values, y_values, color="#004877", linewidth=2, label="linear fit")
+
+savefig("/home/niccollingro/Dokumente/FoPra/FoPra-Zeeman/Output/Plots/current_vs_magneticField.pdf")
