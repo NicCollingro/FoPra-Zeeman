@@ -55,4 +55,6 @@ y_values = LinFit(x_values, fitResult.param)
 
 plot!(x_values, y_values, color="#004877", linewidth=2, label="linear fit")
 
+show
+
 savefig("/home/niccollingro/Dokumente/FoPra/FoPra-Zeeman/Output/Plots/current_vs_magneticField.pdf")
