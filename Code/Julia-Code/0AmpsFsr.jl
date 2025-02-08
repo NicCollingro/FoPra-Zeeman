@@ -2,8 +2,8 @@ using Pkg
 using Plots
 using LsqFit
 
-function Lorentzian(x, p0)
-    return p0[1] ./ ((x.^2 .- p0[2]^2).^2 .+ p0[3])
+function Lorentzian(x, p)
+    return p[1] ./ ((x.^2 .- p[2]^2).^2 .+ (p[3]^2 * p[2]^2))
 end
 
 file = "/home/niccollingro/Dokumente/FoPra/FoPra-Zeeman/Data/ComputerGeneratedData/FSR_0A/FPI_scan_data.dat"
@@ -20,7 +20,7 @@ data = hcat(data...)'
 #println(data)
 
 integer = data[2:end, 1]
-value = data[2:end, 2]
+value = data[2:end, 2] ./ 10000
 
 #println(integer)
 
@@ -32,15 +32,23 @@ peak2Integer =  integer[133:232]
 peak3 = value[233:end]
 peak3Integer =  integer[233:end]
 
-initialGuess = [1e-13, 1111, 1]
+p0_1 = 4e7
+p0_2 = 6400
+p0_3 = 1e4
 
-fitResultPeak1 = LsqFit.curve_fit(Lorentzian, peak1Integer, peak1, initialGuess)
+initialGuess = [p0_1, p0_2, p0_3]
+
+fitResultPeak1 = LsqFit.curve_fit(Lorentzian, peak2Integer, peak2, initialGuess)
 
 println(fitResultPeak1.param)
 
-figure = scatter(integer, value, color="#004877", label=false, grid=false, xlabel="integer", ylabel="value", markersize=2)
+#figure = scatter(integer, value, color="#004877", legend=false, label=false, grid=false, xlabel="integer value", ylabel="intensity value", markersize=2.5)
 
-plot!(peak1Integer, Lorentzian(peak1, fitResultPeak1.param), color=:red)
+#figure = plot!(peak2Integer, Lorentzian(peak2Integer, fitResultPeak1.param), color=:red)
+
+figure = plot(peak2Integer, Lorentzian(peak2Integer, [8000, 250])) #[30e6, 8000, 750e10]
+
+scatter!(integer, value, color="#004877", legend=false, label=false, grid=false, xlabel="integer value", ylabel="intensity value", markersize=2.5)
 
 display(figure)
 
