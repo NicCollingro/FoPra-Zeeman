@@ -1,0 +1,37 @@
+\documentclass[]{report}
+\usepackage{classicthesis}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{bm}
+\numberwithin{equation}{chapter}
+\usepackage{braket}
+% Title Page
+
+\title{Fortgeschrittenenpraktikum Physik \\ Zeeman-Effekt}
+\author{Fabian Becker, Florian Stein}
+
+
+\begin{document}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Tab.}
+
+\maketitle
+\tableofcontents
+\newpage
+\chapter{Theoretical prerequisites}
+\input{vorbereitung.tex}
+\chapter{Execution and evaluation of the experiment}
+\input{magnetfeld.tex}
+\input{fpi.tex}
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{refs}
+
+\end{document}          

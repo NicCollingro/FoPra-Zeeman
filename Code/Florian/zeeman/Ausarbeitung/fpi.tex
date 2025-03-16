@@ -1,0 +1,94 @@
+\section{Calibration of the Fabry-Pérot interferometer}
+We measured the frequency shift due to the Zeeman effect using a  Fabry-Pérot interferometer (FPI). To get any kind of quantitative information out of these measurements, it is therefore crucial to correctly calibrate the FPI. 
+\subsection{Determining the correction function for the FPI movement}
+
+In the experiment, one of the FPI's mirrors is moved by a piezoelectric crystal. This is achived by applying a linear voltage ramp, which is represented by integer values,  to the crystal. Therefore we must determine a function to translate between the voltage signal i.e. the integer values and the position of the mirror and thus the transmitted Frequency. Furthermore the response of the crystal to this voltage is slightly non-linear, which we correct by approximating the movement with a second degree polynomial. 
+
+To determine the coefficients of this polynomial we took a scan of the light without a magnetic field. Because we know that the signal repeats for frequencies that are integer multiples of the free spectral range (FSR), we can use the positions of the repeated signal in the scan to determine the calibration function.
+\begin{figure}[H]
+	\centering
+	\hspace*{-.5cm}\includesvg[width=1.1\linewidth]{fsrfit}
+	\caption{FPI scan to determine the calibration function.}
+	\label{fig:homogenitaet}
+\end{figure}
+The data from this scan was fitted to a sum of three Lorentzians of the form
+\begin{equation}
+	f_j(x)=\frac{a_j}{(x^2-\mu_j^2)^2+\gamma_j}
+\end{equation}
+using the \texttt{matlab}. From this fit we obtained the following parameters $\mu_j$ for the positions of the three peaks
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{cc}
+			\toprule
+			Number of Peak $j$& Position $\mu_j$\\
+			\midrule
+			$0$&$1\,130(10)$\\
+			$1$&$6\,778(5)$\\
+			$2$&$11\,842(5)$\\
+			\bottomrule
+		\end{tabular}
+		\caption{Fit parameters to determine the FSR.}
+	\end{center}
+\end{table}
+We now need to find a function $f$ that satisfies $f(\mu_j)=j, \forall j\in\{0,1,2\}$. If we assume $f$ to be a second degree polynomial $f(x)=ax^2+bx+c$, we obtain the following linear system of equations
+\begin{align}
+	\begin{pmatrix}
+		\mu_0^2 &\mu_0 &1\\
+	    \mu_1^2 &\mu_1&1\\
+	    \mu_2^2 &\mu_2&1\\
+\end{pmatrix}
+\begin{pmatrix}
+	a\\b\\c\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+	0\\1\\2\\
+\end{pmatrix}.
+\end{align}
+Inserting the respective values of $\mu_j$ and numerically solving this system of equations yields
+\begin{align}
+	a&=\;\;\,\,1.906\,136\cdot 10^{-9}\\
+	b&=\;\;\,\,1.619\,801\cdot 10^{-4}\\
+	c&=-1.854\,714 \cdot 10^{-1}
+\end{align}
+As we can see from the values of the coefficients and figure \ref{fig:korrekturfunktion} the relationship between the integer values and the frequency shift deviates only slightly from a linear one.
+\begin{figure}[H]
+	\centering
+	\hspace*{-.5cm}\includesvg[width=1.1\linewidth]{korrekturfunktion}
+	\caption{Plot of the function $f(x)=ax^2+bx+c$.}
+	\label{fig:korrekturfunktion}
+\end{figure}
+\subsection{Determining the free spectral range}
+In the previous section we determined the relation between the integer values and the frequency shift measured in units of the free spectral range. It now remains for us to find the FPI's free spectral range to translate this information into "useful units".
+
+According to \eqref{eq:FSR} the free spectral range $\delta\nu$ is given by
+\begin{equation}
+	\delta\nu = \frac{c}{2d}
+\end{equation}
+and is thus a function of the distance $d$ between the FPI's mirrors.
+
+We determined this distance in two steps. First adjusted the FPI such that the interference rings of both D-lines overlap. Then took an approximate mechanical measurement of $d$ using a micrometer screw and then used \eqref{eq:fpikalibration} to determine the exact distance.
+
+The micrometer reading was $\xi=6.82$ mm. Using the fact that the mirrors are $1.4$ mm apart for a micrometer reading of $5.94$ mm, we obtain
+\begin{equation}
+	d_{\text{micrometer}}=6.82 \, \si{\milli\metre}-5.94\, \si{\milli\metre}+1.4,\si{\milli\metre}=2.28 \,\si{\milli\metre}
+\end{equation} 
+According to \eqref{eq:fpikalibration} this would correspond to
+\begin{equation}
+	n_{\text{meas}}=\frac{d_{\text{micrometer}}}{290.767 \,\si{\micro\metre}}=7.84
+\end{equation}
+Since we expect $n$ to be a natural number, we assume in the following that $n=8$. The relative difference between $n_{\text{meas}}$ and $n$ is about 2\% and can thus be attributed to the inaccuracy of the different measurements of lengths.
+
+Thus we have from \eqref{eq:fpikalibration} 
+\begin{equation}
+	d_{\text{calc}}=n\cdot\frac{c}{2\Delta\nu}=2.326 \,\si{\milli\metre}
+\end{equation}
+which leads to
+\begin{equation}
+	\delta\nu=\frac{c}{2d}=64.440 \,\si{\giga\hertz}.
+\end{equation}
+
+\section{Measuring the Zeeman shift of the sodium D lines}
+We determined the Zeeman shift by using the Lyot filter to select either the D$_1$ or the D$_2$ line \footnote{Since we expect D$_1$ (D$_2$) to split into 4 (6) individual lines, it is possible to distinguish them by the number of their respective Zeeman lines. We found that D$_1$ (D$_2$) corresponds to a setting of the Lyot filter's second polarizer of approximately 310\degree (220 \degree).} and using the FPI to take scans of both lines for several different magnetic field strengths.
+Our work from the previous section enabled us to calculate the frequency shifts from this data.
+\subsection{D$_1$ line}

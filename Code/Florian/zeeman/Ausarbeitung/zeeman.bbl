@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{anleitungZEEMAN}
+{Arbeitsgruppe Prof. Dr. Jürgen Eschner}.
+\newblock \textit{Anleitung zum {Fortgeschrittenenpraktikumsversuch}
+  {Zeeman}-{Effekt}}, 2017.
+\newblock
+  \url{https://www.uni-saarland.de/fileadmin/upload/fakultaet-nt/fopra/AnleitungenDeutsch/Zeeman.pdf}
+  Last accessed 2 January 2025.
+
+\bibitem{demtröderLASER}
+W.~Demtr{\"o}der.
+\newblock {\em Laserspektroskopie: Grundlagen und Techniken}.
+\newblock Springer Berlin Heidelberg, 2013.
+
+\bibitem{demtröderEP3}
+W.~Demtr{\"o}der.
+\newblock {\em Experimentalphysik 3: Atome, Molek{\"u}le und Festk{\"o}rper}.
+\newblock Springer-Lehrbuch. Springer Berlin Heidelberg, 2016.
+
+\bibitem{griffithsQM}
+D.J. Griffiths and D.F. Schroeter.
+\newblock {\em Introduction to Quantum Mechanics}.
+\newblock Cambridge University Press, 2019.
+
+\bibitem{schwablQM}
+F.~Schwabl.
+\newblock {\em Quantenmechanik (QM I): Eine Einf{\"u}hrung}.
+\newblock Springer-Lehrbuch. Springer Berlin Heidelberg, 2013.
+
+\bibitem{sodiumdata}
+D.A. Steck.
+\newblock \textit{Sodium {D} line data}.
+\newblock Available online at \url{http://steck.us/alkalidata} (revision 2.3.3,
+  28 May 2024).
+
+\end{thebibliography}

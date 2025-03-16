@@ -1,0 +1,41 @@
+\section{magnetic field}
+\subsection{Uniformity of the magnetic field}
+Because our theoretical treatment of the Zeeman effect assumed that the atoms are placed inside a homogenous magnetic field, we need to confirm if this is indeed the case.
+To achieve this we used a Hall effect sensor to measure the magnitude of the magnetic field at several positions between the solenoids of the electromagnet. From a measurement along the horizontal axis perpendicular to the solenoid we obtained:
+\begin{figure}[H]
+\centering
+	 \hspace*{-.5cm}\includesvg[width=1.1\linewidth]{homogenitaet}
+	 \caption{Measurement of the magnetic field's homogenity  for a current of 5 A. }
+	 \label{fig:homogenitaet}
+\end{figure}
+As we can see from figure \ref{fig:homogenitaet} the magnetic field only varies by about 3\% over the complete length of the magnet and is almost constant for points closer than 0.5 cm to the centre. Thus the field can be approximately treated as homogenous.
+
+Because of the constraints of the experimental setup we were not able to make the same quantitative measurement of the magnetic field's dependency  on the vertical position as for the horizontal direction, but we were able to confirm that qualitatively it is of the same form.
+\subsection{Calibration of the magnet}
+We needed to determine the magnetic field's dependence on the current in the solenoid before conducting the actual Zeeman effect experiment because then the space between the solenoids was taken up by the sodium lamp and the field could thus not be measured directly.
+
+To do this we inserted the Hall probe into the centre of the electromagnet and measured the magnetic field for several values of current. From figure \ref{fig:B_kalibration} we can see that for sufficiently small currents $B$ increases linearly with $I$ but for larger currents the relationship starts to noticeably deviate from a linear one and we can also see, that $B$ saturates at about 1.3 T. 
+\begin{figure}[H]
+	\centering
+	\hspace*{-0.7cm}\includesvg[width=1.15\linewidth]{b_I_ohne_grid}
+	\caption{Measurement of the magnetic field's dependency on current. }
+	\label{fig:B_kalibration}
+\end{figure}
+Using \texttt{matlab} we fitted the data\footnote{We only used the data for currents for which $B$ depends linearly on $I$ i.e. currents up to 12 A. We also excluded the outlier at 2 A.} to a linear model function of the Form
+\begin{equation}
+	B(I)=MI+N
+\end{equation}
+and obtained the parameters
+\begin{gather}
+M=82.5(10) \,\frac{\si{\milli\tesla}}{\si{\ampere}}\\
+N=-1(8) \,\si{\milli\tesla}.
+\end{gather}
+
+Because we used the Gaussmeter in the $1000$ G range the uncertainty for the $B$ measurements is given by $u(B)=1$ \si{\milli\tesla}. We approximated the uncertainty for the current measurements to be $u(I)=0.25 \, \si{\ampere}$.
+
+ś\begin{figure}[H]
+	\centering
+	\hspace*{-.5cm}\includesvg[width=1.1\linewidth]{homogenitaet}
+	\caption{Measurement of the magnetic field's homogenity  for a current of 5 A. }
+	\label{fig:homogenitaet}
+\end{figure}

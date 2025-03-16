@@ -1,0 +1,6 @@
+clear all;
+clc
+clearvars
+FSR=readmatrix("/home/niccollingro/Documents/FoPra/FoPra-Zeeman/Data/ComputerGeneratedData/FSR_0A/FPI_scan_data.dat");
+
+myfitFunc = fittype("(a .* exp(-0.5 .* ((x-b) ./ c).^2) + a .* exp(-0.5 .* ((x-d) ./ e).^2) + a .* exp(-0.5 .* ((x-b) ./ c).^2) + ")

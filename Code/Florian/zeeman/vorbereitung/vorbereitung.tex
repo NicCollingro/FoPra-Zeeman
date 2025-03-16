@@ -1,0 +1,306 @@
+
+\section{Selection rules for dipole transitions}  
+\subsubsection{Question 1}
+A transition is (in dipole approximation) possible, only if the following selection rules are obeyed.
+\begin{alignat}{3}
+	&\Delta J&&=0,&&\pm1 \quad \,\,\text{$J=0\to 0$ is forbidden}\\
+	&\Delta M_J&&=0,&&\pm1 \quad \text{$M=0\to 0$ is forbidden if $\Delta J=0$}\\
+	&\Delta l &&= &&\pm1
+\end{alignat}
+\section{Clebsch-Gordan coefficients}
+\subsubsection{Question 2}
+We are considering transitions between the states $\mathrm P_\frac{3}{2}=\ket{L=1,J=\frac{3}{2}, M_J}$, $\mathrm P_\frac{1}{2}=\ket{L=1,J=\frac{1}{2}, M_J}$ and $\mathrm S_\frac{1}{2}=\ket{L=0,J=\frac{1}{2}, M_J}$. 
+Since a photon has the spin quantum number $s_{ph}=1$, we can write the states before the transition as a coupling of a state with angular momentum $J_{ph}=1$ and another state with angular momentum $J_2=\frac{1}{2}$. 
+Using the respective Clebsch-Gordan coefficients and the notation $\ket{L,J,M_J}=\ket{J_{ph},M_{J_{ph}}}\ket{J_2,M_{J_2}}$, we get:
+\begin{align}
+	\ket{1,\tfrac{3}{2},-\tfrac{3}{2}}&=\quad \;\;\; \ket{1,-1}\ket{\tfrac{1}{2},-\tfrac{1}{2}}\\
+	\ket{1,\tfrac{3}{2},-\tfrac{1}{2}}&=\sqrt{\tfrac{2}{3}}\ket{1,\;\;\;0}\ket{\tfrac{1}{2},-\tfrac{1}{2}}+\sqrt{\tfrac{1}{3}}\ket{1,-1}\ket{\tfrac{1}{2},+\tfrac{1}{2}}\\
+	\ket{1,\tfrac{3}{2},+\tfrac{1}{2}}&=\sqrt{\tfrac{1}{3}}\ket{1,+1}\ket{\tfrac{1}{2},-\tfrac{1}{2}}+\sqrt{\tfrac{2}{3}}\ket{1,\;\;\; 0}\ket{\tfrac{1}{2},+\tfrac{1}{2}}\\
+	\ket{1,\tfrac{3}{2},+\tfrac{3}{2}}&=\quad \;\;\; \ket{1,+1}\ket{\tfrac{1}{2},+\tfrac{1}{2}}\\
+	\nonumber\\
+	\ket{1,\tfrac{1}{2},-\tfrac{1}{2}}&=\sqrt{\tfrac{1}{3}}\ket{1,\;\;\;0}\ket{\tfrac{1}{2},-\tfrac{1}{2}}-\sqrt{\tfrac{2}{3}}\ket{1,-1}\ket{\tfrac{1}{2},+\tfrac{1}{2}}\\
+	\ket{1,\tfrac{1}{2},+\tfrac{1}{2}}&=\sqrt{\tfrac{2}{3}}\ket{1,+1}\ket{\tfrac{1}{2},-\tfrac{1}{2}}-\sqrt{\tfrac{1}{3}}\ket{1,\;\;\; 0}\ket{\tfrac{1}{2},+\tfrac{1}{2}}
+\end{align}
+\section{Angular distribution of dipole radiation }
+\subsubsection{Question 3}
+The spherical basis vectors are defined as follows:
+\begin{align}
+ \bm e_0&=\bm e_z\\
+ \bm e_+ &= -\frac{1}{ \sqrt 2} \bm e_x -  \frac{i}{ \sqrt 2} \bm e_y\\
+  \bm e_- &= +\frac{1}{ \sqrt 2} \bm e_x -  \frac{i}{ \sqrt 2} \bm e_y
+\end{align}
+where $\bm e_x ,\bm e_y, \bm e_z$ are the usual cartesian basis vectors. Therefore we have
+\begin{align}
+	\bm e_0 \exp(-i \omega_{ba} t)&=\bm e_z \exp(-i \omega_{ba} t) \label{eq:0schwingung}\\
+	\bm e_+ \exp(-i \omega_{ba} t)&=-\frac{1}{\sqrt 2}\left(\bm e_x \exp(-i \omega_{ba} t) +\bm e_y i \exp(-i \omega_{ba} t)\right)\label{eq:+chwingung}\nonumber\\
+	&=-\frac{1}{\sqrt 2}\left(\bm e_x \exp(-i \omega_{ba} t) +\bm e_y  \exp(-i \omega_{ba} t +\tfrac{\pi}{2})\right)\\
+	\bm e_- \exp(-i \omega_{ba} t)&=+\frac{1}{\sqrt 2}\left(\bm e_x \exp(-i \omega_{ba} t )-\bm e_y i \exp(-i \omega_{ba} t)\right)\label{eq:-chwingung}\nonumber\\
+	&=+\frac{1}{\sqrt 2}\left(\bm e_x \exp(-i \omega_{ba} t) -\bm e_y  \exp(-i \omega_{ba} t +\tfrac{\pi}{2})\right)
+\end{align}
+From this we can see, that eq. \eqref{eq:0schwingung} describes an oscillation along the $\bm e_z$-axis, whereas eqns. \eqref{eq:+chwingung} and \eqref{eq:-chwingung} describe a circular oscillation in the $\bm e_x$-$\bm e_y$-plane.
+ The rotation described by eq. \eqref{eq:+chwingung} (\eqref{eq:-chwingung})  is in the positive (negative) direction, i.e counter clockwise (clockwise) when viewed from the positive $\bm e_z$-axis.
+\subsubsection{Question 4}
+We now consider a electromagnetic wave propagating at an angle $\theta$ to the $\bm e_z$-axis. This means that it's  wavevector is of the form:
+\[\bm k=k (\sin \theta \bm e_x+ \cos\theta \bm e_z) \footnote{Since the setup is rotationally symmetric we can assume without loss of generality that $\varphi=0$.}\]
+This wave is polarized in the plane perpendicular to $\bm k$ which is spanned by $\bm e_1=\cos \theta \bm e_x -\sin \theta \bm e_z$ and $e_2=\bm e_y$. We can obtain the components along $ \bm e_14$ and $\bm e_2$ by projecting the oscillator components from eqns. \eqref{eq:0schwingung}-\eqref{eq:-chwingung} onto these vectors.
+Thus we obtain:
+\begin{align}
+	\bm e_1\cdot \bm e_0 &= -\sin \theta \\
+	\bm e_2 \cdot \bm e_0 &= 0\\
+	\nonumber &\\
+	\bm e_1 \cdot \bm e_+ &= -\frac{1}{\sqrt 2} \cos \theta \\	
+	\bm e_2 \cdot \bm e_+ &= -\frac{i}{\sqrt 2}  \\	
+	\nonumber &\\
+	\bm e_1 \cdot \bm e_- &= +\frac{1}{\sqrt 2} \cos \theta \\	
+	\bm e_2 \cdot \bm e_- &= -\frac{i}{\sqrt 2}  
+\end{align}
+Observing the radiation perpendicular to the quantization axis corresponds to the case $\theta=\frac{\pi}{2}$. In this case we get for the $\bm e_0$ oscillation:
+\begin {equation} E\left( \theta=\frac{\pi}{2}\right) \propto \bm e_1= \bm e_z \end{equation}
+and for the $\bm e_\pm$ oscillations:
+\begin{equation}E\left(\theta=\frac{\pi}{2}\right) \propto \bm e_2= \bm e_y \end{equation}
+So in both cases the observed light in the plane perpendicular to $\bm e_z$ is linearly polarized. In the case of oscillation along $\bm e_z$ the light is polarized parallel to the quantization axis, whereas it is polarizad perpendicularly for the $\bm e_\pm$ oscillations.
+
+\section{Zeeman effect}
+\subsubsection{Question 5}
+One can distinguish between the normal and the anomalous Zeeman effect. 
+The normal Zeeman effect occurs, when the total spin of the atom vanishes, so that the atom's magnetic moment only stems from the orbital angular momentum. If the atom has non-zero total spin, the spin also contributes to the atom's magnetic moment and thus to the energy shift in an external field. The name "anomalous Zeeman effect" stems from the fact, that it was discovered before electron spin and therefore could not be explained classically. 
+\subsubsection{Question 6}
+Sodium has the electron configuration [Ne]$3$s$^1$, therefore  it has non-zero total spin $S=\frac{1}{2}$ which leads us to expect that sodium will show the anomalous Zeeman effect when placed in a magnetic field. 
+\subsubsection{Question 7}
+We have the following Hamiltonian:
+\begin{equation}H=H_0+H_Z\end{equation}
+Where $H_0$ is the Hamiltonian of the atom without the external field which is diagonalized by $\ket{n,J,M_J,L,S}$. $H_Z$ describes the interaction with the external magnetic field $\bm B=B\bm e_z$ and is given by:
+\begin{align}
+	H_Z&=\frac{e}{2m_e}(g_L \bm L +g_S \bm S)\cdot \bm B\nonumber\\
+	&=\frac{e}{2m_e}(g_L \bm J + (g_S-g_L)\bm S)\cdot \bm B\nonumber\\
+	&=\frac{e}{2m_e}(g_L \bm J + (g_S-g_L)\bm S)\cdot \bm B \nonumber\\
+	&=\frac{eB}{2m_e}(g_L  J_z + (g_S-g_L) S_z).
+\end{align}
+Because $S_z$ does not commute with $\bm J^2$, we need to compute the Energy shift due to the magnetic field via first order perturbation theory. This means that we need to compute the following matrix elements:
+\begin{align}
+		\braket{H_Z}_{J,M_J,L,S}&=\frac{eB}{2m_e}(g_L  M_J + (g_S-g_L) 	\braket{S_z}_{J,M_J,L,S}) \label{eq:störmatrixelement}
+\end{align}
+To calculate $\braket{S_z}_{J,M_J,L,S}$, we note that $[S_i,L_j]=0, \,[S_i,S_j]=-i\hbar \varepsilon_{ijk}S_k \footnote{In the following we will use Einstein summation notation}$, from which follows 
+\begin{align}
+	S_i L_jS_j-L_jS_jS_i=S_i L_jS_j-S_iL_jS_j-i\hbar \varepsilon_{ijk}L_jS_k=-i\hbar \varepsilon_{ijk}L_jS_k
+\end{align}
+This is equivalent to
+\begin{align}
+\bm S(\bm L \cdot \bm S)-(\bm L \cdot \bm S)\bm S=-i\hbar \bm S \times \bm L.
+\end{align}
+From the vector product of this identity with $\bm J$ follows:
+\begin{align}
+	\bm S \times \bm J(\bm L \cdot \bm S)-(\bm L \cdot \bm S)\bm S\times \bm J&=-i\hbar (\bm S \times \bm L)\times \bm J \nonumber\\
+	&=-i\hbar (\bm L(\bm S \cdot \bm J)-\bm S(\bm L \cdot \bm J)) \nonumber \\
+	&= \;\;\;i\hbar(-\bm J(\bm S \cdot \bm J)+\bm S  \bm J^2). \label{eq:nebenrechnung lande faktor1}
+\end{align}
+Because the states $\ket{n,J,M_J,L,S}$ diagonalize $\bm L \cdot \bm S$, the left side  will  vanish when taking the expected value of of eq. \eqref{eq:nebenrechnung lande faktor1} in those states. From this we obtain:
+\begin{align}
+	\braket{\bm S \bm J^2}=\braket{\bm J(\bm S \cdot \bm J)}\label{eq:nebenrechnung lande faktor2}.
+\end{align}
+If we now use $\bm S \cdot \bm J=\frac{1}{2}(\bm J^2+\bm S^2-\bm L^2)$, which follows from the expansion of $\bm L^2=(\bm J -\bm S)^2$, eq. \eqref{eq:nebenrechnung lande faktor2} simplifies to
+\begin{align}
+	\braket{S_z}=\braket{J_z}\frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}. \label{eq:fast fertiger landefaktro}
+\end{align}
+Inserting eq. \eqref{eq:fast fertiger landefaktro} into eq. \eqref{eq:störmatrixelement} yields:
+\begin{align}
+	\braket{H_Z}&=\frac{eB}{2m_e}\braket{J_z}\left(g_L+(g_S-g_L)\frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}\right)\nonumber\\
+	&=\frac{eB}{2m_e}\braket{J_z}\left(\frac{g_L+g_S}{2}-\frac{g_S-g_L}{2}\frac{L(L+1)-S(S+1)}{J(J+1)}\right)\nonumber\\
+	&=g_J\mu_B B \,  M_J \label{eq:energieshift}
+\end{align}
+\subsubsection{Question 8}
+The energy shift of a transition follows from eq. \eqref{eq:energieshift} and is given by
+\begin{equation}\Delta E=\mu_B B (g_{J_1}M_{J_1} - g_{J_2}M_{J_2}) \end{equation}
+where $g_{J_i}$ and $M_{J_i}$ are the Landé-factors and quantum numbers of the states before and  after the transition. In the case of the sodium D$_1$-line the initial state is P$_{1/2}=\ket{J=\frac{1}{2},M_J,L=1,S=\frac{1}{2}}$  and the final state is S$_{1/2}=\ket{J=\frac{1}{2},M_J,L=0,S=\frac{1}{2}}$. The Landé-factors are:
+\[g_{S_{1/2}}=2, \qquad g_{P_{1/2}}=\frac{2}{3} \]
+The radiation frequency is then given by
+\begin{equation}	\Delta\nu=\frac{\Delta E}{h} \end{equation} 
+We can obtain the shift in wavelength from
+\begin{equation}
+	\Delta\lambda=\lambda'-\lambda_0=\frac{ch}{E_0+\Delta E}-\lambda_0
+\end{equation}
+Where $E_0=3.369\cdot 10^{-19}$J and $\lambda_0=589.5924 \,\si{\nano\metre}$ are the energy and wavelength of the transition in the absence of an external magnetic field.
+The Thus we obtain in the case of $B=0.5 \,\si{\tesla}$:
+\begin{center}
+	\begin{tabular}{ccccc}
+		\toprule
+		P$_\frac{1}{2} M_J \to $S$_\frac{1}{2} M_J$ & $-\frac{1}{2}\to-\frac{1}{2}$ & $-\frac{1}{2}\to+\frac{1}{2}$& $+\frac{1}{2}\to-\frac{1}{2}$& $+\frac{1}{2}\to+\frac{1}{2}$\\
+		\midrule
+		$\Delta\nu$ [GHz] & $+4.67$ &$-9.33$ &$+9.33$ &$-4.67$\\
+		$\Delta\lambda$ [pm] & $-5.40$& $+10.8$& $-10.8$&$+5.42$\\
+		\bottomrule
+	\end{tabular}
+\end{center}
+\subsubsection{Question 9}\label{subsec:Question9}
+The D$_1$ and D$_2$ lines have the wavelengths
+\begin{equation}
+	\lambda_{\mathrm D_1}= 589.5924 \,\si{\nano\metre}, \qquad \lambda_{\mathrm D_2}=588.9951 \,\si{\nano\metre}
+\end{equation}
+Since both of these transitions have S$_\frac{1}{2}$ as the final state, we can calculate the energy difference between P$_{1/2}$ and P$_{3/2}$ using these wavelengths. We obtain
+\begin{equation}
+	\Delta E_{\mathrm P_{3/2},\mathrm P_{1/2}} =hc\left(	\frac{1}{\lambda_{\mathrm D_2}}-		\frac{1}{\lambda_{\mathrm D_1}}\right)=3.42\cdot 10^{-22} \, \si{\joule}=2.14 \, \si{\milli\electronvolt} \label{eq:energiedifferenz}
+\end{equation}
+To achieve a Zeeman separation of equal magnitude as $	\Delta E_{\mathrm P_{3/2},\mathrm P_{1/2}}$, $B$ would have to fulfill
+\begin{equation}	\Delta E_{\mathrm P_{3/2},\mathrm P_{1/2}}=\mu_Bg_JB\Leftrightarrow B=\frac{	\Delta E_{\mathrm P_{3/2},\mathrm P_{1/2}}}{\mu_Bg_J}=55.3 \, \si{\tesla}.\end{equation}
+Which corresponds to a very strong magnetic field.
+\section{The Lyot filter}
+\subsubsection{Question 10}
+Because the crystal has two different indices of refraction, the two orthogonal components of a lightwave gain a relative difference in phase $\Delta \varphi$ after passing through the crystal. The speed of light in a crystal with refractive index $n$ is given by:
+\begin{equation}
+	c'=\frac{c}{n}
+\end{equation}
+where $c$ is the speed of light in vacuum. Therefore the time a lightwave needs  to fully pass through a crystal of length $l$ is given by:
+\begin{equation}
+	t=\frac{l}{c'}=\frac{l}{c}\times n
+\end{equation} 
+which corresponds to a change  in phase of magnitude:
+\begin{equation}
+	\varphi=2\pi \frac{t}{T}=2\pi\nu t=2\pi \frac{l}{\lambda}n.
+\end{equation}
+The phase difference between both components of the wave is thus given by:
+\begin{equation}
+	\Delta\varphi=2\pi \frac{l}{\lambda}\Delta n.
+\end{equation}
+The light is linearly polarized after passing through the crystal if $\Delta\varphi= m \pi, \, m\in \mathbb Z$. We  can use the fact that these linearly polarized waves with even $m$ are orthogonal to those with odd $m$, to distinguish between the D$_1$ and D$_2$ lines.
+
+\subsubsection{Question 11}
+The Jones vectors for horizontal and vertical polarization are::
+\begin{equation}
+	\bm H = \begin{pmatrix} 1\\0 \end{pmatrix}, \qquad \bm V = \begin{pmatrix} 0\\1 \end{pmatrix} 
+\end{equation}
+The Jones matrix for a birefractive crystal with axes parallel to $\bm H$  and $\bm V$ is given by:
+\begin{equation}
+	\bf M = 
+	\begin{pmatrix}
+		e^{i \varphi_1} &0\\ 0 & e^{i \varphi_2}
+	\end{pmatrix}
+\end{equation}
+In our case, $\Delta \varphi$ is dependent on wavelength and can have the values $\Delta \varphi_1 = 2 m \pi$, $\Delta \varphi_2 = (2k+1) \pi$ with $m,k\in \mathbb Z$. Thus we have the following two cases for \textbf{M} :
+\begin{equation}
+	\textbf L_1 = 
+	\begin{pmatrix}
+	1 &0\\ 0 & 1
+	\end{pmatrix}, \qquad
+\textbf L_2 = 
+\begin{pmatrix}
+	1 &0\\ 0 & -1
+\end{pmatrix}
+\end{equation}
+Where \textbf L$_i$ is the transmission matrix for a wave of wavelength $\lambda_i$.
+Because the Lyyot filter in the experiment is at an angle of 45\degree to $\bm H$ and $\bm V$. We need to use the transformation
+\begin{equation}
+	\textbf L (\theta)=\textbf R(\theta) \textbf L \textbf R^{-1}(\theta).
+\end{equation}
+Where \textbf R($\theta$) is given by:
+\begin{equation}
+	\textbf R (\theta)=\begin{pmatrix} \cos \theta &  \sin\theta \\ -\sin\theta & \;\;\;\;\cos\theta \end{pmatrix}	
+\end{equation}
+Thus we obtain:
+\begin{equation}
+	\textbf L_1(\theta) = 
+	\begin{pmatrix}
+		1 &0\\ 0 & 1
+	\end{pmatrix}, \qquad
+	\textbf L_2(\theta) = 
+	\begin{pmatrix}
+		0&1\\  1&0
+	\end{pmatrix}
+\end{equation}
+The Jones matrices for the  the final polarizer are given by:
+\begin{equation}
+	\textbf P_H=\begin{pmatrix}
+		1 &0 \\ 0&0
+	\end{pmatrix}, \qquad
+\textbf P_V=\begin{pmatrix}
+	0 &0 \\ 0&1
+\end{pmatrix}
+\end{equation}
+Where $H$ and $V$ correspond to  wether the polarizer is set to horizontal or vertical polarization. The Matrices for the system as a whole are then given by
+\begin{equation}
+	\textbf M_{ij}=\textbf P_j\textbf L_i 
+\end{equation}
+Thus we have the following four possibilities for \textbf M$_{ij}$
+\begin{alignat}{2}
+	&\textbf M_{1H}=\begin{pmatrix}
+		1 & 0\\ 0&0
+	\end{pmatrix} \qquad
+&&\textbf M_{1V}=\begin{pmatrix}
+	0 & 0\\ 0&1
+\end{pmatrix}\\
+	&\textbf M_{2H}=\begin{pmatrix}
+	0 & 1\\ 0&0
+\end{pmatrix} 
+&&\textbf M_{2V}=\begin{pmatrix}
+	0 & 0\\1&0
+\end{pmatrix}
+	\end{alignat}
+From which we can see, that for a given setting of the input and output polarizers only one of the two wavelengths is getting transmitted.
+\section{Fabry–Pérot interferometer}
+\subsubsection{Question 12}
+Eqns. (19) and (20) from the experiment instructions are:
+\begin{align}
+	\cos \theta_k &=1-(k+\varepsilon)\frac{\lambda}{2d}\\
+	\tan\theta_k &=\frac{R_k}{f}
+\end{align}
+In the case of small angles $\theta_k$, we can use the approximations
+\begin{align}
+	\cos\theta_k&=1-\frac{\theta_k^2}{2}+\mathcal O(\theta_k^4)\\
+	\tan \theta_k &= \theta_k +\mathcal O (\theta_k^2)
+\end{align}
+From which we obtain
+\begin{align}
+	\theta_k^2&\approx (k+\varepsilon)\frac{\lambda}{d}\\
+	R_k^2&\approx f^2 \theta_k^2
+\end{align}
+Thus:
+\begin{equation}
+	R_k^2\approx \lambda \frac{f^2}{d}(k+\varepsilon)\label{eq:radienquadrat}
+\end{equation}
+\subsubsection{Question 13}
+From eqn. \eqref{eq:radienquadrat} we obtain
+\begin{equation}
+		\lambda_i=R^2_i \frac{1}{f^2}\frac{d}{k_i+\varepsilon}, \qquad i \in\{1,2\}
+\end{equation}
+If we assume that $k_1=k_2=k$ this implies:
+\begin{equation}
+	\Delta \lambda = \frac{1}{f^2} \frac{d}{k+\varepsilon} (R_1^2-R_2^2)
+\end{equation}
+Because 
+\begin{equation}
+	\Delta l = 2d-(k+\varepsilon)\overline\lambda
+\end{equation}
+and $\Delta l$ is in the order of magnitude of a few wavelengths, i.e. approximately zero when compared to $d$, we get
+\begin{equation}
+	d=\lambda\frac{k+\varepsilon}{2}
+\end{equation}
+and thus
+\begin{equation}
+	\Delta \lambda = \frac{\overline \lambda}{2f^2}(R_1^2-R_2^2).
+\end{equation}
+\subsubsection{Question 14}
+In eqn. \eqref{eq:energiedifferenz} we calculated the difference in energies between the D$_1$ and D$_2$ lines to be $\Delta E=3.42\cdot 10^{-22}$ \si{\joule}. From which we can compute their difference in frequencies 
+\begin{equation}
+	\Delta \nu = \frac{\Delta E}{h}=516 \,\si{\giga\hertz}.
+\end{equation}
+\subsubsection{Question 15}
+Eqns. (23) and (24) from the instruction are:
+\begin{align}
+	\delta\nu&=\frac{c}{2d}\\
+	\Delta \nu&= n\delta\nu +\Delta x
+\end{align}
+Thus if $\Delta x=0$, we obtain 
+\begin{align}
+	\Delta \nu &=n \delta \nu \nonumber\\&= n \frac{c}{2d} \\
+	\Leftrightarrow \quad d &= n \frac{c}{2\Delta \nu} \\ 
+	&= n \cdot 290 \si{\micro\metre}
+\end{align}
+
+\subsubsection{Question 17}
+If we move the mirror by an amount $\Delta d$, the free spectral range changes to
+\begin{equation}
+	\delta\nu'=\frac{c}{2(d+\Delta d)}.
+\end{equation}
+This corresponds to a relative change of
+\begin{equation}
+	\frac{\delta \nu'}{\delta\nu}=\frac{d}{d+\Delta d}
+\end{equation}
